@@ -134,7 +134,7 @@ $(document).ready(function(){
   function carouselMaker() {
     for(var i = 0; i < studentsObject.sigmanauts.length; i ++) { //loops through sigmanauts array
       initialsFinder(studentsObject.sigmanauts[i].name) //assigns initials of current student to initials variables
-      $("#carousel").append('<div class="student" id="student' + i + '"><p>' + firstInitial + secondInitial + '</p></div>'); //add a new div for each student in array
+      $("#carousel").append('<div class="student slide" id="student' + i + '"><p>' + firstInitial + secondInitial + '</p></div>'); //add a new div for each student in array
       $("#student" + i).data("studentNumber", i);
     }
   }
