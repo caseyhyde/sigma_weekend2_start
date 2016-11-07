@@ -138,17 +138,17 @@ $(document).ready(function(){
   }
 
   function initialsFinder(name) {
-    firstInitial = name.charAt(0);
-    if(name.indexOf(" ") > -1) {
-      secondInitial = name.charAt((name.search(" ") + 1));
+    firstInitial = name.charAt(0); //sets first initial equal to first char in name string
+    if(name.indexOf(" ") > -1) { // if there is a space in the string:
+      secondInitial = name.charAt((name.search(" ") + 1)); //set second initial equal to character after space
     } else {
-      secondInitial = "";
+      secondInitial = ""; //else set second intial to an empty string
     }
   }
 
   function moveCarousel() {
-    $("#carousel").children().css('background-color', 'white');
-    $("#student" + indexId).css('background-color', 'yellow');
+    $("#carousel").children().css('background-color', 'white'); //change all background colors to white
+    $("#student" + indexId).css('background-color', 'yellow'); //change background color of current student to yellow
   }
 
 
