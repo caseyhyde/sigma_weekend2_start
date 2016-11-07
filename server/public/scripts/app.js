@@ -81,6 +81,7 @@ $(document).ready(function(){
 
   $("#next").on('click', nextStudent);
   $("#previous").on('click', prevStudent);
+  $("#carousel").on('click', '.student', selectStudent);
 //Things to do when data is successfully received
   function init() {
     makeStudent();
@@ -122,6 +123,7 @@ $(document).ready(function(){
     makeStudent(); //reassign new student to currentStudent
     appendToDom(); //add info from currentStudent to DOM
     resetTimer();
+    moveCarousel();
   }
 
   function resetTimer() {
@@ -132,8 +134,8 @@ $(document).ready(function(){
   function carouselMaker() {
     for(var i = 0; i < studentsObject.sigmanauts.length; i ++) { //loops through sigmanauts array
       initialsFinder(studentsObject.sigmanauts[i].name) //assigns initials of current student to initials variables
-      $("#carousel").append('<div id="student' + i + '"></div>'); //add a new div for each student in array
-      $("#student" + i).text(firstInitial + secondInitial); //add text to each students div with their initials
+      $("#carousel").append('<div class="student" id="student' + i + '"><p>' + firstInitial + secondInitial + '</p></div>'); //add a new div for each student in array
+      $("#student" + i).data("studentNumber", i);
     }
   }
 
@@ -149,6 +151,14 @@ $(document).ready(function(){
   function moveCarousel() {
     $("#carousel").children().css('background-color', 'white'); //change all background colors to white
     $("#student" + indexId).css('background-color', 'yellow'); //change background color of current student to yellow
+  }
+
+  function selectStudent() {
+    indexId = $(this).data("studentNumber");
+    makeStudent();
+    appendToDom();
+    resetTimer();
+    moveCarousel();
   }
 
 

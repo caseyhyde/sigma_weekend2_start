@@ -2,7 +2,16 @@ body {
   text-align: center;
 }
 
+p {
+  text-align: center;
+  width: 100%;
+  margin: auto;
+}
+
 #carousel > * {
+  margin: 1px;
+  border: solid 2px black;
+  border-radius: 50%;
   padding: auto;
   display: inline-flex;
   flex-wrap: wrap;
@@ -19,6 +28,7 @@ nav {
   margin-bottom: 15px;
 }
 
-#student5 {
-  text-align: center;
+#student {
+  height: 200px;
+  margin-bottom: 15px;
 }
