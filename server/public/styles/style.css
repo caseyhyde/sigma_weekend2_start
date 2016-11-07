@@ -1,0 +1,24 @@
+body {
+  text-align: center;
+}
+
+#carousel > * {
+  padding: auto;
+  display: inline-flex;
+  flex-wrap: wrap;
+  width: 40px;
+  height: 40px;
+  flex-grow: 10;
+}
+
+#studentName, #gitUsername, #shoutout {
+  display: none;
+}
+
+nav {
+  margin-bottom: 15px;
+}
+
+#student5 {
+  text-align: center;
+}
